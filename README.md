@@ -4,7 +4,10 @@ Slides for my talk on unsupervised and supervised NLP machine learning for [IBM 
 
 Check out the slides at [bit.ly/silge-ibm-ai-day](bit.ly/silge-ibm-ai-day)!
 
-My xaringan theme:
+
+Slides created with [remark.js](http://remarkjs.com/) and the R package [**xaringan**](https://github.com/yihui/xaringan)
+
+My xaringan theme (from [xaringanthemer](https://pkg.garrickadenbuie.com/xaringanthemer/)):
 
 ```
 mono_accent(
