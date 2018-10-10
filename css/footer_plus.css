@@ -1,0 +1,25 @@
+.large { font-size: 150% }
+
+.title-slide .remark-slide-number {
+  display: none;
+}
+
+.remark-slide-number {
+  display: none;
+}
+
+div.my-footer {
+    background-color: #E96F0C;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 20px;
+    width: 100%;
+}
+div.my-footer span {
+    font-size: 10pt;
+    color: #F7F8FA;
+    position: absolute;
+    left: 15px;
+    bottom: 2px;
+}
