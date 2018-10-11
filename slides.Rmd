@@ -450,7 +450,7 @@ library(tidytext)
 tidy_books <- books %>%
   unnest_tokens(word, text) %>%
   group_by(word) %>%
-  filter(n() > 50) %>%
+  filter(n() > 10) %>%
   ungroup
 
 tidy_books
@@ -486,7 +486,6 @@ is_jane <- books_joined$title == "Pride and Prejudice"
 model <- cv.glmnet(sparse_words, is_jane, family = "binomial", 
                    parallel = TRUE, keep = TRUE)
 
-model
 ```
 
 ---
