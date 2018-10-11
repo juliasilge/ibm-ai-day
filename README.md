@@ -12,7 +12,7 @@ My xaringan theme (from [xaringanthemer](https://pkg.garrickadenbuie.com/xaringa
 ```
 mono_accent(
     base_color         = "#F48024",
-    header_font_google = google_font("IBM Plex Sans"),
+    header_font_google = google_font("IBM Plex Sans", "700"),
     text_font_google   = google_font("IBM Plex Sans Condensed"),
     code_font_google   = google_font("IBM Plex Mono")
     )

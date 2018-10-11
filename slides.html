@@ -33,11 +33,11 @@ background-size: cover
 
 &lt;img src="figs/so-logo.svg" width="30%"/&gt;
 
-# Text Modeling
+# **Text Modeling**
 
 ### USING TIDY DATA PRINCIPLES
 
-### Julia Silge | IBM Community Day: AI
+.large[**Julia Silge | IBM Community Day: AI**]
 
 ---
 class: left, middle
@@ -61,7 +61,7 @@ background-size: cover
 background-image: url(figs/white_bg.svg)
 background-size: cover
 
-# Text in the real world
+# **Text in the real world**
 
 --
 
@@ -109,7 +109,7 @@ background-size: 450px
 background-image: url(figs/white_title.svg)
 background-size: cover
 
-# Two powerful NLP modeling approaches
+# **Two powerful NLP techniques**
 
 --
 
@@ -124,13 +124,13 @@ background-size: cover
 background-image: url(figs/white_bg.svg)
 background-size: cover
 
-# Topic modeling
+# **Topic modeling**
 
-- .large[Each document = mixture of topics]
+- .large[Each **document** = mixture of topics]
 
 --
 
-- .large[Each topic = mixture of words]
+- .large[Each **topic** = mixture of words]
 
 ---
 
@@ -144,11 +144,11 @@ class: center, middle
 background-image: url(figs/white_title.svg)
 background-size: cover
 
-# GREAT LIBRARY HEIST 🕵
+# **GREAT LIBRARY HEIST** 🕵️‍♂️
 
 ---
 
-## Downloading your text data
+## **Downloading your text data**
 
 
 ```r
@@ -185,7 +185,7 @@ books
 
 ---
 
-## Someone has torn your books apart! 😭
+## **Someone has torn your books apart!** 😭
 
 
 
@@ -221,7 +221,7 @@ by_chapter
 
 ---
 
-## Can we put them back together?
+## **Can we put them back together?**
 
 
 ```r
@@ -254,7 +254,7 @@ word_counts
 
 ---
 
-## Can we put them back together?
+## **Can we put them back together?**
 
 
 ```r
@@ -272,7 +272,7 @@ class(words_sparse)
 
 ---
 
-## Train a topic model
+## **Train a topic model**
 
 Use a sparse matrix or a `quanteda::dfm` object as input
 
@@ -315,7 +315,7 @@ summary(topic_model)
 
 ---
 
-## Exploring the output of topic modeling
+## **Exploring the output of topic modeling**
 
 .large[Time for tidying!]
 
@@ -345,7 +345,7 @@ chapter_topics
 
 ---
 
-## Exploring the output of topic modeling
+## **Exploring the output of topic modeling**
 
 
 ```r
@@ -376,7 +376,7 @@ top_terms
 ```
 
 ---
-## Exploring the output of topic modeling
+## **Exploring the output of topic modeling**
 
 
 ```r
@@ -394,7 +394,7 @@ top_terms %&gt;%
 
 ---
 
-## How are documents classified?
+## **How are documents classified?**
 
 
 ```r
@@ -423,7 +423,7 @@ chapters_gamma
 
 ---
 
-## How are documents classified?
+## **How are documents classified?**
 
 
 ```r
@@ -452,7 +452,7 @@ chapters_parsed
 
 ---
 
-## How are documents classified?
+## **How are documents classified?**
 
 
 ```r
@@ -474,14 +474,14 @@ class: center, middle
 background-image: url(figs/white_title.svg)
 background-size: cover
 
-# GOING FARTHER 🚀
+# **GOING FARTHER** 🚀
 
 ---
 
 background-image: url(figs/white_bg.svg)
 background-size: cover
 
-## Tidying model output
+## **Tidying model output**
 
 ### Which words in each document are assigned to which topics?
 
@@ -495,7 +495,7 @@ background-size: 850px
 
 ---
 
-## Using stm
+## **Using stm**
 
 - .large[Document-level covariates]
 
@@ -525,7 +525,7 @@ background-size: 950px
 background-image: url(figs/white_title.svg)
 background-size: cover
 
-# Stemming? 
+# **Stemming?**
 
 .large[Advice from [Schofield &amp; Mimno](https://mimno.infosci.cornell.edu/papers/schofield_tacl_2016.pdf)]
 
@@ -549,12 +549,12 @@ background-image: url(figs/white_title.svg)
 background-size: cover
 
 
-# Text classification
+# **Text classification**
 &lt;h1 class="fa fa-balance-scale fa-fw"&gt;&lt;/h1&gt;
 
 ---
 
-## Downloading your text data
+## **Downloading your text data**
 
 
 ```r
@@ -590,7 +590,7 @@ books
 
 ---
 
-## Making a tidy dataset
+## **Making a tidy dataset**
 
 .large[Use this kind of data structure for EDA! 💅]
 
@@ -626,7 +626,7 @@ tidy_books
 
 ---
 
-## Cast to a sparse matrix
+## **Cast to a sparse matrix**
 
 .large[And build a dataframe with a response variable]
 
@@ -643,7 +643,7 @@ books_joined &lt;- data_frame(document = as.integer(rownames(sparse_words))) %&g
 
 ---
 
-## Train a glmnet model
+## **Train a glmnet model**
 
 
 ```r
@@ -659,7 +659,7 @@ model &lt;- cv.glmnet(sparse_words, is_jane, family = "binomial",
 
 ---
 
-## Tidying our model
+## **Tidying our model**
 
 .large[Tidy, then filter to choose some lambda from glmnet output]
 
@@ -678,7 +678,7 @@ Intercept &lt;- coefs %&gt;%
 
 ---
 
-## Tidying our model
+## **Tidying our model**
 
 
 ```r
@@ -710,7 +710,7 @@ classifications
 
 ---
 
-## Understanding our model
+## **Understanding our model**
 
 
 ```r
@@ -729,7 +729,7 @@ coefs %&gt;%
 
 ---
 
-## ROC
+## **ROC**
 
 
 ```r
@@ -748,7 +748,7 @@ roc &lt;- comment_classes %&gt;%
 
 ---
 
-## ROC
+## **ROC**
 
 
 ```r
@@ -779,7 +779,7 @@ roc %&gt;%
 
 ---
 
-## AUC for model
+## **AUC for model**
 
 
 ```r
@@ -796,7 +796,7 @@ roc %&gt;%
 
 ---
 
-## Misclassifications
+## **Misclassifications**
 
 Let's talk about misclassifications. Which documents here were incorrectly predicted to be written by Jane Austen?
 
@@ -814,21 +814,21 @@ roc %&gt;%
 ## # A tibble: 10 x 2
 ##    Probability text                                                       
 ##          &lt;dbl&gt; &lt;chr&gt;                                                      
-##  1       0.890 "     But who shall dwell in these worlds if they be"      
-##  2       0.857 "horizon--\"they're starving in heaps, bolting, treading o…
-##  3       0.821 Her eyes met my brother's, and her hesitation ended.       
-##  4       0.961 did not know what to make of her.  One shell, and they wou…
-##  5       0.806 Such things, I told myself, could not be.                  
-##  6       0.991 been out of England before, she would rather die than trus…
-##  7       0.910 breed.  I tell you, I'm grim set on living.  And if I'm no…
-##  8       0.876 all seriously.  Yet though they wore no clothing, it was i…
-##  9       0.893 her.                                                       
-## 10       0.880 evening paper, after wiring for authentication from him an…
+##  1       0.860 reading steadily with all his thoughts about his subject, …
+##  2       0.927 range not very different from ours except that, according …
+##  3       0.880 they did not wish to destroy the country but only to crush…
+##  4       0.827 decorum were necessarily different from ours; and not only…
+##  5       0.901 the innkeeper, she would, I think, have urged me to stay in
+##  6       0.880 evening paper, after wiring for authentication from him an…
+##  7       0.832 "\"Take this!\" said the slender lady, and she gave my bro…
+##  8       0.806 Such things, I told myself, could not be.                  
+##  9       0.962 "\"Be a man!\" said I.  \"You are scared out of your wits!…
+## 10       0.905 had my doubts.  You're slender.  I didn't know that it was…
 ```
 
 ---
 
-## Misclassifications
+## **Misclassifications**
 
 Let's talk about misclassifications. Which documents here were incorrectly predicted to *not* be written by Jane Austen?
 
@@ -846,16 +846,16 @@ roc %&gt;%
 ## # A tibble: 10 x 2
 ##    Probability text                                                       
 ##          &lt;dbl&gt; &lt;chr&gt;                                                      
-##  1      0.190  my part, except the shops and public places. The country i…
-##  2      0.0759 me, I did not once put my foot out of doors, though I was …
-##  3      0.176  Newcastle, a place quite northward, it seems, and there th…
-##  4      0.173  I was never more annoyed! The insipidity, and yet the nois…
-##  5      0.174  "of selecting a wife, as I certainly did.\""               
-##  6      0.0456 They descended the hill, crossed the bridge, and drove to …
-##  7      0.195  the first of September, than any body else in the country. 
-##  8      0.187  half-a-mile, and then found themselves at the top of a con…
-##  9      0.184  glancing over it, said, in a colder voice:                 
-## 10      0.0271 to the edge of the water, and one of its narrowest parts. …
+##  1      0.135  occasional appearance of some trout in the water, and talk…
+##  2      0.176  Newcastle, a place quite northward, it seems, and there th…
+##  3      0.184  glancing over it, said, in a colder voice:                 
+##  4      0.187  half-a-mile, and then found themselves at the top of a con…
+##  5      0.0226 window that he wore a blue coat, and rode a black horse.   
+##  6      0.173  I was never more annoyed! The insipidity, and yet the nois…
+##  7      0.174  "of selecting a wife, as I certainly did.\""               
+##  8      0.157  "as I sit by the fire.\""                                  
+##  9      0.164  one sleepless night out of two.                            
+## 10      0.193  struck with the action of doing a very gallant thing, and …
 ```
 
 ---
@@ -865,14 +865,14 @@ background-image: url(figs/tmwr_0601.png)
 background-position: 50% 70%
 background-size: 750px
 
-## Workflow for text mining/modeling
+## **Workflow for text mining/modeling**
 
 ---
 background-image: url(figs/lizzieskipping.gif)
 background-position: 50% 55%
 background-size: 750px
 
-# Go explore real-world text!
+# **Go explore real-world text!**
 
 ---
 
