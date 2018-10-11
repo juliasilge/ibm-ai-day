@@ -46,11 +46,11 @@ background-size: cover
 
 <img src="figs/so-logo.svg" width="30%"/>
 
-# Text Modeling
+# **Text Modeling**
 
 ### USING TIDY DATA PRINCIPLES
 
-### Julia Silge | IBM Community Day: AI
+.large[**Julia Silge | IBM Community Day: AI**]
 
 ---
 class: left, middle
@@ -74,7 +74,7 @@ background-size: cover
 background-image: url(figs/white_bg.svg)
 background-size: cover
 
-# Text in the real world
+# **Text in the real world**
 
 --
 
@@ -122,7 +122,7 @@ background-size: 450px
 background-image: url(figs/white_title.svg)
 background-size: cover
 
-# Two powerful NLP modeling approaches
+# **Two powerful NLP techniques**
 
 --
 
@@ -137,13 +137,13 @@ background-size: cover
 background-image: url(figs/white_bg.svg)
 background-size: cover
 
-# Topic modeling
+# **Topic modeling**
 
-- .large[Each document = mixture of topics]
+- .large[Each **document** = mixture of topics]
 
 --
 
-- .large[Each topic = mixture of words]
+- .large[Each **topic** = mixture of words]
 
 ---
 
@@ -157,11 +157,11 @@ class: center, middle
 background-image: url(figs/white_title.svg)
 background-size: cover
 
-# GREAT LIBRARY HEIST `r emo::ji("sleuth")`
+# **GREAT LIBRARY HEIST** `r emo::ji("sleuth")`
 
 ---
 
-## Downloading your text data
+## **Downloading your text data**
 
 ```{r}
 library(tidyverse)
@@ -180,7 +180,7 @@ books
 
 ---
 
-## Someone has torn your books apart! `r emo::ji("sob")`
+## **Someone has torn your books apart!** `r emo::ji("sob")`
 
 
 ```{r}
@@ -198,7 +198,7 @@ by_chapter
 
 ---
 
-## Can we put them back together?
+## **Can we put them back together?**
 
 ```{r}
 library(tidytext)
@@ -214,7 +214,7 @@ word_counts
 
 ---
 
-## Can we put them back together?
+## **Can we put them back together?**
 
 ```{r}
 words_sparse <- word_counts %>%
@@ -225,7 +225,7 @@ class(words_sparse)
 
 ---
 
-## Train a topic model
+## **Train a topic model**
 
 Use a sparse matrix or a `quanteda::dfm` object as input
 
@@ -240,7 +240,7 @@ summary(topic_model)
 
 ---
 
-## Exploring the output of topic modeling
+## **Exploring the output of topic modeling**
 
 .large[Time for tidying!]
 
@@ -252,7 +252,7 @@ chapter_topics
 
 ---
 
-## Exploring the output of topic modeling
+## **Exploring the output of topic modeling**
 
 ```{r}
 top_terms <- chapter_topics %>%
@@ -265,7 +265,7 @@ top_terms
 ```
 
 ---
-## Exploring the output of topic modeling
+## **Exploring the output of topic modeling**
 
 ```{r, eval=FALSE}
 top_terms %>%
@@ -293,7 +293,7 @@ top_terms %>%
 
 ---
 
-## How are documents classified?
+## **How are documents classified?**
 
 ```{r}
 chapters_gamma <- tidy(topic_model, matrix = "gamma",
@@ -304,7 +304,7 @@ chapters_gamma
 
 ---
 
-## How are documents classified?
+## **How are documents classified?**
 
 ```{r}
 chapters_parsed <- chapters_gamma %>%
@@ -315,7 +315,7 @@ chapters_parsed
 
 ---
 
-## How are documents classified?
+## **How are documents classified?**
 
 ```{r, eval=FALSE}
 chapters_parsed %>%
@@ -343,14 +343,14 @@ class: center, middle
 background-image: url(figs/white_title.svg)
 background-size: cover
 
-# GOING FARTHER `r emo::ji("rocket")`
+# **GOING FARTHER** `r emo::ji("rocket")`
 
 ---
 
 background-image: url(figs/white_bg.svg)
 background-size: cover
 
-## Tidying model output
+## **Tidying model output**
 
 ### Which words in each document are assigned to which topics?
 
@@ -364,7 +364,7 @@ background-size: 850px
 
 ---
 
-## Using stm
+## **Using stm**
 
 - .large[Document-level covariates]
 
@@ -393,7 +393,7 @@ background-size: 950px
 background-image: url(figs/white_title.svg)
 background-size: cover
 
-# Stemming? 
+# **Stemming?**
 
 .large[Advice from [Schofield & Mimno](https://mimno.infosci.cornell.edu/papers/schofield_tacl_2016.pdf)]
 
@@ -417,12 +417,12 @@ background-image: url(figs/white_title.svg)
 background-size: cover
 
 
-# Text classification
+# **Text classification**
 <h1 class="fa fa-balance-scale fa-fw"></h1>
 
 ---
 
-## Downloading your text data
+## **Downloading your text data**
 
 ```{r}
 library(tidyverse)
@@ -440,7 +440,7 @@ books
 
 ---
 
-## Making a tidy dataset
+## **Making a tidy dataset**
 
 .large[Use this kind of data structure for EDA! `r emo::ji("nail")`]
 
@@ -458,7 +458,7 @@ tidy_books
 
 ---
 
-## Cast to a sparse matrix
+## **Cast to a sparse matrix**
 
 .large[And build a dataframe with a response variable]
 
@@ -474,7 +474,7 @@ books_joined <- data_frame(document = as.integer(rownames(sparse_words))) %>%
 
 ---
 
-## Train a glmnet model
+## **Train a glmnet model**
 
 ```{r}
 library(glmnet)
@@ -490,7 +490,7 @@ model <- cv.glmnet(sparse_words, is_jane, family = "binomial",
 
 ---
 
-## Tidying our model
+## **Tidying our model**
 
 .large[Tidy, then filter to choose some lambda from glmnet output]
 
@@ -508,7 +508,7 @@ Intercept <- coefs %>%
 
 ---
 
-## Tidying our model
+## **Tidying our model**
 
 ```{r}
 classifications <- tidy_books %>%
@@ -522,7 +522,7 @@ classifications
 
 ---
 
-## Understanding our model
+## **Understanding our model**
 
 ```{r, eval=FALSE}
 coefs %>%
@@ -551,7 +551,7 @@ coefs %>%
 
 ---
 
-## ROC
+## **ROC**
 
 ```{r}
 comment_classes <- classifications %>%
@@ -569,7 +569,7 @@ roc <- comment_classes %>%
 
 ---
 
-## ROC
+## **ROC**
 
 ```{r}
 roc %>%
@@ -592,7 +592,7 @@ roc %>%
 
 ---
 
-## AUC for model
+## **AUC for model**
 
 ```{r}
 roc %>%
@@ -601,7 +601,7 @@ roc %>%
 
 ---
 
-## Misclassifications
+## **Misclassifications**
 
 Let's talk about misclassifications. Which documents here were incorrectly predicted to be written by Jane Austen?
 
@@ -616,7 +616,7 @@ roc %>%
 
 ---
 
-## Misclassifications
+## **Misclassifications**
 
 Let's talk about misclassifications. Which documents here were incorrectly predicted to *not* be written by Jane Austen?
 
@@ -636,14 +636,14 @@ background-image: url(figs/tmwr_0601.png)
 background-position: 50% 70%
 background-size: 750px
 
-## Workflow for text mining/modeling
+## **Workflow for text mining/modeling**
 
 ---
 background-image: url(figs/lizzieskipping.gif)
 background-position: 50% 55%
 background-size: 750px
 
-# Go explore real-world text!
+# **Go explore real-world text!**
 
 ---
 
